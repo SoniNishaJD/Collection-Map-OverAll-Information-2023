@@ -7,12 +7,12 @@ public class Collection {
     public static void main(String[] args) {
         System.out.println("Welcome to Collection Framework ");
         /*
-        * Creating Collection
-        * 1) Type Safe- Same types of Elements
-        * 2) NonType Safe- Different types of elements
-        */
+         * Creating Collection
+         * 1) Type Safe- Same types of Elements
+         * 2) NonType Safe- Different types of elements
+         */
         /*
-        * <> - type safe like we can say the String, Integer,Float Also We can say Generic way of Collecting*/
+         * <> - type safe like we can say the String, Integer,Float Also We can say Generic way of Collecting*/
 
         // Type Safe Collection
         ArrayList<String> names = new ArrayList<>();
@@ -22,7 +22,7 @@ public class Collection {
         names.add("Meet");
         names.add("Star");
         /*Here we mention String then it will add only String
-        * names.add(123); -- wll not allowed coz it is generic*/
+         * names.add(123); -- wll not allowed coz it is generic*/
         //Remove
         names.remove("Star");
         System.out.println(names);
@@ -38,26 +38,26 @@ public class Collection {
         System.out.println(names.isEmpty());
 
         //Remove Amit and add Rekha
-        names.set(2,"Rekha");
+        names.set(2, "Rekha");
         System.out.println(names);
         //Add New Name
-        names.add(2,"Manish");
+        names.add(2, "Manish");
         System.out.println(names);
         //Remove all elements
-//        names.clear();
-//        System.out.println(names);
+        //        names.clear();
+        //        System.out.println(names);
         //====================Vector==================//
-        Vector<String> vector= new Vector<>();
+        Vector<String> vector = new Vector<>();
         vector.addAll(names);
-        System.out.println("Vector " + vector );
+        System.out.println("Vector " + vector);
         //====================For Each Loop============//
         //length of word
-        for(String s:names){
+        for (String s : names) {
             System.out.println(s + "\t" + s.length());
         }
         System.out.println("-------------------------------------");
         //Reverse the Name
-        for(String s:names) {
+        for (String s : names) {
             System.out.print(s + "\t" + s.length() + "\t");
             StringBuffer br = new StringBuffer(s);
             System.out.println(br.reverse());
@@ -66,32 +66,31 @@ public class Collection {
         System.out.println("-------------------------------------");
         // Traversing Using Iterator ---->Forward
         Iterator<String> itr = names.iterator();
-        while (itr.hasNext()){
-         String next = itr.next();
+        while (itr.hasNext()) {
+            String next = itr.next();
             System.out.println(next);
         }
         System.out.println("+++++++++++++++++++++++++++++++++++");
         //ListIterator ---->Backward
-        ListIterator<String> litr =  names.listIterator(names.size());
-        while (litr.hasPrevious()){
-         String previous = litr.previous();
+        ListIterator<String> litr = names.listIterator(names.size());
+        while (litr.hasPrevious()) {
+            String previous = litr.previous();
             System.out.println(previous);
         }
         System.out.println("///////////////////////////////////////");
 
         //For each Method -- java 8 feature
         System.out.println("$$$$$$$$$$$$$ For Each Method $$$$$$$$$$$$$");
-        names.forEach(s->{
+        names.forEach(s -> {
             System.out.println(s);
         });
         //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         System.out.println("%%%%%% Sorting Of Element %%%%%%%");
-        TreeSet<String> set= new TreeSet<>();
+        TreeSet<String> set = new TreeSet<>();
         set.addAll(names);
-        set.forEach(e->{
+        set.forEach(e -> {
             System.out.println(e);
         });
-
 
         //=======================================================================//
 
@@ -103,5 +102,133 @@ public class Collection {
         list.add(1001.2002);
         list.add(true);
         System.out.println(list);
+
+        //=========================================================================//
+
+        System.out.println("+++++++++++++++++LinkedList+++++++++++++++++++++");
+        /*
+         * Declare LinkedList:
+         * LinkedList l = new LinkedList(); ==> Hetogenious data
+         * LinkedList<String> l = new LinkedList<String>(); ==> Homogenous
+         * */
+        LinkedList l = new LinkedList();
+
+        //Add element in LinkedList
+        l.add(5);
+        l.add("Sonika");
+        l.add(2.5);
+        l.add(true);
+        l.add('N');
+
+        System.out.println(l);
+        System.out.println(l.size());
+        System.out.println("/////////////////Remove by Index/////////////////////////");
+        //remove
+        l.remove(3); // Remove by index
+        System.out.println("after romoving an element by index: " + l);
+        System.out.println("//////////////Remove  by object////////////////////////////");
+        l.remove(true);
+        System.out.println("After removing an element by object" + l);
+
+        System.out.println("//////////////////Insert////////////////////////");
+        //Insert ==> Add an element in the middle of linkedList
+        l.add(3, "Java");
+        System.out.println(l);
+        System.out.println("/////////////////Retrive/////////////////////////");
+        //retrive method
+        System.out.println("Retriving the element :" + l.get(3));
+        System.out.println("/////////////////Replace/////////////////////////");
+        //Set method
+        l.set(4, 'A');
+        System.out.println("Replace the element:" + l);
+
+        System.out.println("////////////Is Exist//////////////////////////////");
+        //Check if element exist or not by contain method
+
+        System.out.println("Is Exist " + l.contains("Sonika"));
+        System.out.println("Is Exist " + l.contains("Jewellers"));
+
+        System.out.println("/////////////////Is Empty/////////////////////////");
+        //isEmpty or not by true or false
+        System.out.println("Is Empty:" + l.isEmpty());
+
+        System.out.println("/////////////////For/////////////////////////");
+        //Reading element by for loop
+        for (int i = 0; i < l.size(); i++) {
+            System.out.println(l.get(i));
+        }
+        System.out.println("///////////////ForEach////////////////////////////");
+        //for Each loop
+        for (Object e : l) {
+            System.out.println(e);
+        }
+        System.out.println("///////////////////////Itretor//////////////////////");
+        Iterator it = l.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+        System.out.println("////////////////All method are only Homogenous method////////////////////////////////");
+        //All method are only Homogenous method
+        LinkedList ll = new LinkedList<>();
+        ll.add("N");
+        ll.add("I");
+        ll.add("S");
+        ll.add("H");
+        ll.add("A");
+
+        System.out.println(ll);
+
+        System.out.println("////////////Add all object on new linkedList//////////////////");
+        LinkedList new_ll = new LinkedList();
+        new_ll.addAll(ll);
+        System.out.println(new_ll);
+
+        System.out.println("/////////////////////Sort////////////////////");
+        Collections.sort(ll);
+        System.out.println("After Sorting an Element: " + ll);
+
+        System.out.println("///////////////////Reverse the order//////////////////////");
+        //Decending Order
+        Collections.sort(ll, Collections.reverseOrder());
+        System.out.println(ll);
+
+        System.out.println("//////////////Shuffle Method/////////////////////");
+        //Shuffle meaning is rendom arrange
+        Collections.shuffle(ll);
+        System.out.println("After Shuffle an element: " + ll);
+
+        System.out.println("///////////////////////Methods which is only in LinkedList//////////////////////");
+        LinkedList lll = new LinkedList();
+        //Animals
+        lll.add("Dog");
+        lll.add("Dog");
+        lll.add("Cat");
+        lll.add("Rat");
+        lll.add("Horse");
+        lll.add("Cow");
+        System.out.println(lll);
+
+        System.out.println("////////////////////////Add in First in linked List/////////////////////////////");
+        lll.addFirst("Got");
+        System.out.println(lll);
+
+        System.out.println("////////////////////////Add in Last in linked List/////////////////////////////");
+        lll.addLast("Ship");
+        System.out.println(lll);
+
+        System.out.println("////////////////////////Get element First in linked List/////////////////////////////");
+        System.out.println(lll.getFirst());
+
+        System.out.println("////////////////////////Get element Last in linked List/////////////////////////////");
+        System.out.println(lll.getLast());
+
+        System.out.println("////////////////////////Remove  First element in linked List/////////////////////////////");
+        lll.removeFirst();
+        System.out.println(lll);
+
+        System.out.println("////////////////////////Remove  Last element in linked List/////////////////////////////");
+        lll.removeLast();
+        System.out.println(lll);
     }
 }

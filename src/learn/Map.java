@@ -11,7 +11,7 @@ public class Map {
         // duplicate not allow
         //Add Element
         companies.put("Aurosoft Technologies", 40000);
-        companies.put("Facebook", 20000);
+        companies.put("MVC", 20000);
         companies.put("Google", 1000000);
         System.out.println(companies);
         System.out.println("*****************************************");
