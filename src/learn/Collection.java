@@ -230,5 +230,111 @@ public class Collection {
         System.out.println("////////////////////////Remove  Last element in linked List/////////////////////////////");
         lll.removeLast();
         System.out.println(lll);
+
+        System.out.println("***************************HashSet*********************************");
+        //Default capacity is 16
+        //Default Load Factor is 0.75
+        /*   HashSet hs = new HashSet();
+         *   HashSet hs = new HashSet(100); // Initial capacity is 100
+         *   HashSet hs = new HashSet(100,(float) 0.90); ==> Locations
+         *   Hashset<Integer> hs = new HashSet<Integer>(); ==> Specific Datatype
+         */
+        HashSet hs = new HashSet(); // Output will be in rendom order
+
+        hs.add('A');
+        hs.add("Dream");
+        hs.add(25);
+        hs.add("Nishaa");
+        hs.add(true);
+        hs.add(null);
+        System.out.println(hs);
+
+        System.out.println("********************Remove***************************");
+        hs.remove(25);
+        System.out.println(hs);
+
+
+        System.out.println("**************************Contain Method**********************");
+        System.out.println(hs.contains("Nishaa"));
+        System.out.println(hs.contains("Soni"));
+
+        System.out.println("******************************Is Empty or not**************************");
+        System.out.println(hs.isEmpty());
+
+        System.out.println("****************************For Each Loop****************************");
+        for (Object o :hs){
+            System.out.println(o);
+        }
+
+        System.out.println("***********************Itrator******************************");
+        Iterator it2 = hs.iterator();
+        while (it2.hasNext()){
+            System.out.println(it2.next());
+        }
+
+        System.out.println("****************Add**************************");
+        HashSet <Integer> evenNumber = new HashSet<>();
+        evenNumber.add(2);
+        evenNumber.add(4);
+        evenNumber.add(6);
+        System.out.println(evenNumber);
+
+        System.out.println("****************Add All**************************");
+         HashSet<Integer> numbers = new HashSet<>();
+         numbers.addAll(evenNumber);
+         numbers.add(10);
+        System.out.println(numbers);
+
+        System.out.println("****************Remove All**************************");
+        numbers.removeAll(evenNumber);
+        System.out.println(numbers);
+
+        System.out.println("****************************Union********************");
+        // Union means which are unique value
+         HashSet<Integer> set1 = new HashSet<Integer>();
+         set1.add(1);
+         set1.add(2);
+         set1.add(3);
+         set1.add(4);
+         set1.add(5);
+
+        System.out.println(set1);
+
+        HashSet<Integer> set2 = new HashSet<Integer>();
+        set2.add(3);
+        set2.add(4);
+        set2.add(5);
+
+        System.out.println(set2);
+
+        //Union
+        set1.addAll(set2);
+        System.out.println(set1);
+
+        System.out.println("********************Intersection***************************");
+        //Intersection means commons elements in two section
+        set1.retainAll(set2);
+        System.out.println(set1);
+
+        System.out.println("********************Difference***************************");
+
+        set1.removeAll(set2);
+        System.out.println(set1); //[1,2] after comment retainAll method
+
+        System.out.println("-------------------------------LinkedHashset---------------------------------");
+        /*
+        * Same methods as hashset
+        * **************methods*******************
+        *   LinkedHashSet lset = new LinkedHashSet();
+        *   LinkedHashSet<Integer> lset = new LinkedHashSet<Integer>();
+        */
+        LinkedHashSet lset = new LinkedHashSet(); // Sequence order
+        lset.add(2);
+        lset.add("Java");
+        lset.add("Developer");
+        lset.add(2.5);
+        lset.add(false);
+
+        System.out.println(lset);
     }
 }
