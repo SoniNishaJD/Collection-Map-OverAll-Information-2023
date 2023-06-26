@@ -1,6 +1,7 @@
 package learn;
 
 import java.util.*;
+import java.util.Map;
 
 public class Collection {
 
@@ -336,5 +337,161 @@ public class Collection {
         lset.add(false);
 
         System.out.println(lset);
+
+        System.out.println("++++++++++++++++++++++++++++++++++++++QUEUE+++++++++++++++++++++++++++++++++++++++++");
+
+        System.out.println("+++++++++++++++++++++++++++++++++Priority Queue++++++++++++++++++++++++++++++++++++++");
+
+        PriorityQueue pq = new PriorityQueue();
+        //Insertation allow
+        //Duplicate allow
+        //Add an Element
+        pq.add("A");
+        pq.add("B");
+        pq.add("C");
+        pq.offer("D");
+        pq.add("E");
+        pq.add("E");
+
+        System.out.println(pq);
+        //Get Head element
+        System.out.println("+++++++++++++++++++++++++++Element/peek+++++++++++++++++++++++++++++");
+        System.out.println(pq.element());
+        System.out.println(pq.peek());
+
+        System.out.println("+++++++++++++++++++++++++++Remove+++++++++++++++++++++++++++++");
+        System.out.println(pq.remove());
+        System.out.println(pq);
+        System.out.println(pq.poll());
+        System.out.println(pq);
+
+        System.out.println("++++++++++++++++++++++++++++++++Itertor+++++++++++++++++++++++++++++++++++++");
+        Iterator itr3 = pq.iterator();
+        while (itr3.hasNext()){
+            System.out.println(itr3.next());
+
+            System.out.println("+++++++++++++++++++++++++++For Each+++++++++++++++++++++++++++++");
+
+            for (Object obj:pq){
+                System.out.println(obj);
+            }
+        }
+
+
+
+        System.out.println("+++++++++++++++++++++++++++++++++LinkedList++++++++++++++++++++++++++++++++++++++");
+
+        LinkedList lq = new LinkedList();
+        //Insertation  allow
+        //Duplicate  allow
+        //Add an Element
+        lq.add("A");
+        lq.add("B");
+        lq.add("C");
+        lq.offer("D");
+        lq.add("E");
+        lq.add("E");
+        lq.add(100);
+
+        System.out.println(lq);
+        //Get Head element
+        System.out.println("+++++++++++++++++++++++++++Element/peek+++++++++++++++++++++++++++++");
+        System.out.println(lq.element());
+        System.out.println(lq.peek());
+
+        System.out.println("+++++++++++++++++++++++++++Remove+++++++++++++++++++++++++++++");
+        System.out.println(lq.remove());
+        System.out.println(lq);
+        System.out.println(lq.poll());
+        System.out.println(lq);
+
+        System.out.println("++++++++++++++++++++++++++++++++Itertor+++++++++++++++++++++++++++++++++++++");
+        Iterator itr4 = lq.iterator();
+        while (itr4.hasNext()){
+            System.out.println(itr4.next());
+
+            System.out.println("+++++++++++++++++++++++++++For Each+++++++++++++++++++++++++++++");
+
+            for (Object obj:lq){
+                System.out.println(obj);
+            }
+        }
+
+        System.out.println("+++++++++++++++++++++++++++Hash Map+++++++++++++++++++++++++++++");
+        /*
+        * HashMap hm = new HashMap();
+        * HashMap<Integer,String> hm = new HashMap<Integer,String> ();*/
+       HashMap hm = new HashMap();  // Hetrogonous , NO Duplicate key , But Value can be dupli
+
+        hm.put(101,"Nisha");
+        hm.put(102,"Soni");
+        hm.put(103,"Dream");
+        hm.put(104,"Java");
+        hm.put(105,"Developer");
+        hm.put(106,"Soni");
+        System.out.println(hm);
+        System.out.println("+++++++++++++++++++++++++++Get peticular value by key+++++++++++++++++++++++++++++");
+        System.out.println(hm.get(103));
+
+        System.out.println("+++++++++++++++++++++++++++Remove Pair+++++++++++++++++++++++++++++");
+        hm.remove(106);
+        System.out.println(hm);
+
+        System.out.println("+++++++++++++++++++++++++++Key OR Value Exist or not+++++++++++++++++++++++++++++");
+        System.out.println(hm.containsKey(105));
+        System.out.println(hm.containsValue("Developer"));
+
+        System.out.println("+++++++++++++++++++++++++++Empty or not+++++++++++++++++++++++++++++");
+        System.out.println(hm.isEmpty());
+
+        System.out.println("+++++++++++++++++++++++++++Size number of Key and value +++++++++++++++++++++++++++++");
+        System.out.println(hm.size());
+
+        System.out.println("+++++++++++++++++++++++++++All Key as a Set+++++++++++++++++++++++++++++");
+        System.out.println(hm.keySet());
+
+
+//        System.out.println("+++++++++++++++++++++++++++Read perticular object+++++++++++++++++++++++++++++");
+//        for (Object i :hm.keySet()){
+//            System.out.println(i);    // It works when second method starts " hm = new HashMap<Integer,String> ();"
+
+//        }
+
+        System.out.println("+++++++++++++++++++++++++++All Values as a Collections+++++++++++++++++++++++++++++");
+        System.out.println(hm.values());
+
+//        System.out.println("+++++++++++++++++++++++++++Read perticular object+++++++++++++++++++++++++++++");
+//        for (Object i :hm.values()){
+//            System.out.println(i);    // It works when second method starts " hm = new HashMap<Integer,String> ();"
+
+//        }
+
+        //        System.out.println("+++++++++++++++++++++++++++Read perticular object+++++++++++++++++++++++++++++");
+//        for (Object i :hm.keySet()){
+//            System.out.println(i+"   "+hm.get(i));    // It works when second method starts " hm = new HashMap<Integer,String> ();"
+
+//        }
+
+        System.out.println("+++++++++++++++++++++++++++Define perticular pair as a Set object+++++++++++++++++++++++++++++");
+        System.out.println(hm.entrySet());
+
+     //   System.out.println("+++++++++++++++++++++++++++Entry Methods+++++++++++++++++++++++++++++");
+
+//        System.out.println("+++++++++++++++++++++++++++Entry form Hashmap+++++++++++++++++++++++++++++");
+//        for (Map.Entry entry :hm.entrySet()){
+//            System.out.println(entry.getKey()+"  "+entry.getValue());  ====> HashMap<Integer,String> hm = new HashMap<Integer,String> ();
+//        }
+
+        System.out.println("++++++++++++++++++++++++++++++++Iterator+++++++++++++++++++++++++++++++++++");
+
+
+
+
+
+
+
+
+
+
     }
 }
