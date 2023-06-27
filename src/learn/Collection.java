@@ -483,6 +483,72 @@ public class Collection {
 //        }
 
         System.out.println("++++++++++++++++++++++++++++++++Iterator+++++++++++++++++++++++++++++++++++");
+        Set s = hm.entrySet();
+        Iterator itr5 = s.iterator();
+        while (itr5.hasNext()){
+           Map.Entry entry2 = (Map.Entry) itr5.next();
+            System.out.println(entry2.getKey()+"   " +entry2.getValue());
+        }
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*HashTable*-*-*-*-*-*-*-*-*-*-*-*-*");
+        /* Hashtable ht = new Hashtable();
+        *  Hashtable ht = new(initial capacity);
+        * Hashtable ht = new(initial capacity,load factor);
+        * Hashtable <Integer,String> ht = new Hashtable<Integer,String>();*/
+
+
+        Hashtable <Integer,String> ht = new Hashtable<Integer,String>();
+        ht.put(1,"Nisha");
+        ht.put(2,"Priya");
+        ht.put(3,"Prit");
+        ht.put(4,"Ami");
+        ht.put(5,"Mani");
+
+        System.out.println(ht);
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Get by Key*-*-*-*-*-*-*-*-*-*-*-*-*");
+
+        System.out.println(ht.get(2));
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Key exist or not*-*-*-*-*-*-*-*-*-*-*-*-*");
+
+        System.out.println(ht.containsKey(2));
+        System.out.println(ht.containsKey(6));
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Value exist or not*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println(ht.containsValue("Ami"));
+        System.out.println(ht.containsValue("Pragya"));
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Is Empty or not*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println(ht.isEmpty());
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Get all Keys*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println(ht.keySet());
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Get all Values*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println(ht.values());
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*For loop for keys and values*-*-*-*-*-*-*-*-*-*-*-*-*");
+        for (int k :ht.keySet()){
+            System.out.println(k+"  "+ht.get(k));
+        }
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Entry Specific Method...*-*-*-*-*-*-*-*-*-*-*-*-*");
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Know about All Entry*-*-*-*-*-*-*-*-*-*-*-*-*");
+        for (Map.Entry entry :ht.entrySet()){
+            System.out.println(entry.getKey()+"  "+entry.getValue());
+        }
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Iterator*-*-*-*-*-*-*-*-*-*-*-*-*");
+        Set s2 = ht.entrySet();
+        Iterator iterator =s2.iterator();
+        while (iterator.hasNext()){
+            Map.Entry entry = (Map.Entry) iterator.next();
+            System.out.println(entry.getKey()+"  "+entry.getValue());
+        }
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*Remove by Key*-*-*-*-*-*-*-*-*-*-*-*-*");
+
+        ht.remove(3);
+        System.out.println(ht);
+
+
 
 
 
